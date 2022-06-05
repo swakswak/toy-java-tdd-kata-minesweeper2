@@ -70,11 +70,15 @@ class CellTest {
     @Test
     void should_Mine() {
         // arrange
-        Cell cell = Cell.getMineInstance();
+        Cell mine = Cell.getMineInstance();
+        Cell space = Cell.getSpaceInstance();
+        Cell five = Cell.numberOf(5);
 
         // act
 
         // assert
-        assertTrue(cell.isMine());
+        assertTrue(mine.isMine());
+        assertFalse(space.isMine());
+        assertFalse(five.isMine());
     }
 }

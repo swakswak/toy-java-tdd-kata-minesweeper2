@@ -1,5 +1,7 @@
 package swak.swak.minesweeper;
 
+import java.lang.reflect.Type;
+
 public class Cell {
     private static final int MINE_VALUE = -1;
     private static final int SPACE_VALUE = 0;
@@ -50,5 +52,9 @@ public class Cell {
 
     public boolean isCovered() {
         return isCovered;
+    }
+
+    public boolean isMine() {
+        return CellType.MINE == cellType;
     }
 }
