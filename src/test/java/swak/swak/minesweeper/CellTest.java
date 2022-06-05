@@ -14,7 +14,7 @@ class CellTest {
         // act
 
         // assert
-        assertEquals(CellType.NUMBER, cell.getType());
+        assertEquals(Cell.Type.NUMBER, cell.getType());
         assertEquals(value, cell.getValue());
     }
 
@@ -27,7 +27,7 @@ class CellTest {
         // act
 
         // assert
-        assertEquals(CellType.MINE, mine.getType());
+        assertEquals(Cell.Type.MINE, mine.getType());
         assertEquals(expectedIntValue, mine.getValue());
     }
 
@@ -40,7 +40,7 @@ class CellTest {
         // act
 
         // assert
-        assertEquals(CellType.SPACE, space.getType());
+        assertEquals(Cell.Type.SPACE, space.getType());
         assertEquals(expectedIntValue, space.getValue());
     }
 

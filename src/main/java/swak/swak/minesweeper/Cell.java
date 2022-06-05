@@ -1,18 +1,16 @@
 package swak.swak.minesweeper;
 
-import java.lang.reflect.Type;
-
 public class Cell {
     private static final int MINE_VALUE = -1;
     private static final int SPACE_VALUE = 0;
     private static final int MINIMUM_VALUE_OF_NUMBER_TYPE = 1;
     private static final int MAXIMUM_VALUE_OF_NUMBER_TYPE = 8;
 
-    private final CellType cellType;
+    private final Type cellType;
     private final int value;
     private boolean isCovered;
 
-    private Cell(CellType cellType, int value) {
+    private Cell(Type cellType, int value) {
         this.cellType = cellType;
         this.value = value;
         this.isCovered = false;
@@ -20,15 +18,15 @@ public class Cell {
 
     public static Cell numberOf(int value) {
         validateNumberTypeCellValue(value);
-        return new Cell(CellType.NUMBER, value);
+        return new Cell(Type.NUMBER, value);
     }
 
     public static Cell getMineInstance() {
-        return new Cell(CellType.MINE, MINE_VALUE);
+        return new Cell(Type.MINE, MINE_VALUE);
     }
 
     public static Cell getSpaceInstance() {
-        return new Cell(CellType.SPACE, SPACE_VALUE);
+        return new Cell(Type.SPACE, SPACE_VALUE);
     }
 
     private static void validateNumberTypeCellValue(int value) {
@@ -38,7 +36,7 @@ public class Cell {
         }
     }
 
-    public CellType getType() {
+    public Type getType() {
         return cellType;
     }
 
@@ -55,6 +53,12 @@ public class Cell {
     }
 
     public boolean isMine() {
-        return CellType.MINE == cellType;
+        return Type.MINE == cellType;
+    }
+
+    public enum Type {
+        MINE,
+        SPACE,
+        NUMBER
     }
 }
