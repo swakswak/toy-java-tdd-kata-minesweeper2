@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CellTest {
     @Test
-    void should_createNumber() {
+    void should_CreateNumberTypeCell() {
         // arrange
         final int value = 1;
         Cell cell = Cell.numberOf(value);
@@ -19,7 +19,7 @@ class CellTest {
     }
 
     @Test
-    void should_createMine() {
+    void should_CreateMineTypeCell() {
         // arrange
         final int expectedIntValue = -1;
         Cell mine = Cell.getMineInstance();
@@ -32,15 +32,26 @@ class CellTest {
     }
 
     @Test
-    void should_createSpace() {
+    void should_CreateSpaceTypeCell() {
         // arrange
         final int expectedIntValue = 0;
         Cell space = Cell.getSpaceInstance();
 
         // act
 
-        //assert
+        // assert
         assertEquals(CellType.SPACE, space.getType());
         assertEquals(expectedIntValue, space.getValue());
+    }
+    
+    @Test
+    void should_ThrowsException_CellNumberValueOutOfRange() {
+        // arrange
+        // act
+        
+        // assert
+        assertThrows(IllegalArgumentException.class, () -> Cell.numberOf(0));
+        assertThrows(IllegalArgumentException.class, () -> Cell.numberOf(9));
+        assertThrows(IllegalArgumentException.class, () -> Cell.numberOf(10));
     }
 }
