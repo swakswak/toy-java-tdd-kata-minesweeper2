@@ -13,6 +13,10 @@ public class Cell {
         return new Cell(CellType.NUMBER, value);
     }
 
+    public static Cell mine() {
+        return new Cell(CellType.MINE, -1);
+    }
+
     public CellType getType() {
         return cellType;
     }
