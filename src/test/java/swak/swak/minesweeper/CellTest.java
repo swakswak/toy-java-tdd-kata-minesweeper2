@@ -21,12 +21,26 @@ class CellTest {
     @Test
     void should_createMine() {
         // arrange
-        Cell mine = Cell.mine();
+        final int expectedIntValue = -1;
+        Cell mine = Cell.getMineInstance();
 
         // act
 
         // assert
         assertEquals(CellType.MINE, mine.getType());
-        assertEquals(-1, mine.getValue());
+        assertEquals(expectedIntValue, mine.getValue());
+    }
+
+    @Test
+    void should_createSpace() {
+        // arrange
+        final int expectedIntValue = 0;
+        Cell space = Cell.getSpaceInstance();
+
+        // act
+
+        //assert
+        assertEquals(CellType.SPACE, space.getType());
+        assertEquals(expectedIntValue, space.getValue());
     }
 }

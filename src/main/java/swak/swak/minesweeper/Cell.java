@@ -13,7 +13,7 @@ public class Cell {
         return new Cell(CellType.NUMBER, value);
     }
 
-    public static Cell mine() {
+    public static Cell getMineInstance() {
         return new Cell(CellType.MINE, -1);
     }
 
