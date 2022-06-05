@@ -17,6 +17,10 @@ public class Cell {
         return new Cell(CellType.MINE, -1);
     }
 
+    public static Cell getSpaceInstance() {
+        return new Cell(CellType.SPACE, 0);
+    }
+
     public CellType getType() {
         return cellType;
     }
