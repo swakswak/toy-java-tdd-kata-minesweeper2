@@ -6,12 +6,12 @@ public class Cell {
     private static final int MINIMUM_VALUE_OF_NUMBER_TYPE = 1;
     private static final int MAXIMUM_VALUE_OF_NUMBER_TYPE = 8;
 
-    private final Type cellType;
+    private final Type type;
     private final int value;
     private boolean isCovered;
 
-    private Cell(Type cellType, int value) {
-        this.cellType = cellType;
+    private Cell(Type type, int value) {
+        this.type = type;
         this.value = value;
         this.isCovered = false;
     }
@@ -37,7 +37,7 @@ public class Cell {
     }
 
     public Type getType() {
-        return cellType;
+        return type;
     }
 
     public int getValue() {
@@ -53,7 +53,7 @@ public class Cell {
     }
 
     public boolean isMine() {
-        return Type.MINE == cellType;
+        return Type.MINE == type;
     }
 
     public enum Type {
