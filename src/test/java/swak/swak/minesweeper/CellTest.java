@@ -8,11 +8,13 @@ class CellTest {
     @Test
     void should_createNumber() {
         // arrange
-        Cell cell = Cell.numberOf(1);
+        final int value = 1;
+        Cell cell = Cell.numberOf(value);
 
         // act
 
         // assert
         assertEquals(CellType.NUMBER, cell.getType());
+        assertEquals(value, cell.getValue());
     }
 }

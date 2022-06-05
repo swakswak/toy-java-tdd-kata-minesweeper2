@@ -16,4 +16,8 @@ public class Cell {
     public CellType getType() {
         return cellType;
     }
+
+    public int getValue() {
+        return value;
+    }
 }
