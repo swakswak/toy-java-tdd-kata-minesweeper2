@@ -66,4 +66,15 @@ class CellTest {
         // assert
         assertFalse(cell.isCovered());
     }
+
+    @Test
+    void should_Mine() {
+        // arrange
+        Cell cell = Cell.getMineInstance();
+
+        // act
+
+        // assert
+        assertTrue(cell.isMine());
+    }
 }
