@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CellTest {
     @Test
-    void should_createMine() {
+    void should_createNumber() {
         // arrange
         Cell cell = Cell.numberOf(1);
 
