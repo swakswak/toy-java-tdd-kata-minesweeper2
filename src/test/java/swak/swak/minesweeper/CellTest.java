@@ -2,10 +2,8 @@ package swak.swak.minesweeper;
 
 import org.junit.jupiter.api.Test;
 
-import javax.print.attribute.standard.MediaSize;
-import java.time.DayOfWeek;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CellTest {
     @Test
@@ -46,12 +44,12 @@ class CellTest {
         assertEquals(CellType.SPACE, space.getType());
         assertEquals(expectedIntValue, space.getValue());
     }
-    
+
     @Test
     void should_ThrowsException_CellNumberValueOutOfRange() {
         // arrange
         // act
-        
+
         // assert
         assertThrows(IllegalArgumentException.class, () -> Cell.numberOf(0));
         assertThrows(IllegalArgumentException.class, () -> Cell.numberOf(9));
