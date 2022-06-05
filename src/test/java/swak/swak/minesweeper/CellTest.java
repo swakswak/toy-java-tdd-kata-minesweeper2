@@ -2,8 +2,7 @@ package swak.swak.minesweeper;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CellTest {
     @Test
@@ -54,5 +53,17 @@ class CellTest {
         assertThrows(IllegalArgumentException.class, () -> Cell.numberOf(0));
         assertThrows(IllegalArgumentException.class, () -> Cell.numberOf(9));
         assertThrows(IllegalArgumentException.class, () -> Cell.numberOf(10));
+    }
+
+    @Test
+    void should_Click() {
+        // arrange
+        Cell cell = Cell.getSpaceInstance();
+
+        // act
+        cell.click();
+
+        // assert
+        assertFalse(cell.isCovered());
     }
 }

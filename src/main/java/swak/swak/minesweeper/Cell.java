@@ -5,12 +5,15 @@ public class Cell {
     private static final int SPACE_VALUE = 0;
     private static final int MINIMUM_VALUE_OF_NUMBER_TYPE = 1;
     private static final int MAXIMUM_VALUE_OF_NUMBER_TYPE = 8;
+
     private final CellType cellType;
     private final int value;
+    private boolean isCovered;
 
     private Cell(CellType cellType, int value) {
         this.cellType = cellType;
         this.value = value;
+        this.isCovered = false;
     }
 
     public static Cell numberOf(int value) {
@@ -39,5 +42,13 @@ public class Cell {
 
     public int getValue() {
         return value;
+    }
+
+    public void click() {
+        this.isCovered = false;
+    }
+
+    public boolean isCovered() {
+        return isCovered;
     }
 }
