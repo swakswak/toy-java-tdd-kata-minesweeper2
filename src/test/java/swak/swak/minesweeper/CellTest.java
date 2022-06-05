@@ -17,4 +17,16 @@ class CellTest {
         assertEquals(CellType.NUMBER, cell.getType());
         assertEquals(value, cell.getValue());
     }
+
+    @Test
+    void should_createMine() {
+        // arrange
+        Cell mine = Cell.mine();
+
+        // act
+
+        // assert
+        assertEquals(CellType.MINE, mine.getType());
+        assertEquals(-1, mine.getValue());
+    }
 }
