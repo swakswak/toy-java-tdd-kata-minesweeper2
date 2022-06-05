@@ -2,6 +2,9 @@ package swak.swak.minesweeper;
 
 import org.junit.jupiter.api.Test;
 
+import javax.print.attribute.standard.MediaSize;
+import java.time.DayOfWeek;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CellTest {
