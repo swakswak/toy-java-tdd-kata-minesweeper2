@@ -56,6 +56,15 @@ public class Cell {
         return Type.MINE == type;
     }
 
+    @Override
+    public String toString() {
+        return switch (type) {
+            case MINE -> "*";
+            case SPACE -> "0";
+            case NUMBER -> value + "";
+        };
+    }
+
     public enum Type {
         MINE,
         SPACE,
